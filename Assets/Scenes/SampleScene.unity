@@ -266,8 +266,9 @@ GameObject:
   - component: {fileID: 546464985}
   - component: {fileID: 546464984}
   - component: {fileID: 546464986}
+  - component: {fileID: 546464987}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GridObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -311,3 +312,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
+--- !u!114 &546464987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 546464983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e84fe0015abee4ebfba1a0df1e661dd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mScale: {x: 1, y: 1, z: 1}
