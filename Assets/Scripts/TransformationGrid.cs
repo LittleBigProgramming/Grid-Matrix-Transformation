@@ -8,7 +8,7 @@ public class TransformationGrid : MonoBehaviour {
     public int mGridResolution = 10;
     Transform[] mGrid;
     List<Transformation> mTransformations;
-
+    Matrix4x4 mTransformation;
 
     // Use this for initialization
     void Start () {
@@ -23,12 +23,11 @@ public class TransformationGrid : MonoBehaviour {
         }
 
         mTransformations = new List<Transformation>();
-
     }
 
     // Update is called once per frame
     void Update() {
-        GetComponents<Transformation>(mTransformations);
+        UpdateTransformation();
         for (int i = 0, z = 0; z < mGridResolution; z++)
         {
             for (int y = 0; y < mGridResolution; y++)
@@ -66,10 +65,17 @@ public class TransformationGrid : MonoBehaviour {
     Vector3 TransformPoint (int x, int y, int z) {
         Vector3 coordinates = GetCoordinates(x, y, z);
 
-        for (int i = 0; i < mTransformations.Count; i++) {
-            coordinates = mTransformations[i].Apply(coordinates);
-        }
+        return mTransformation.MultiplyPoint(coordinates);
+    }
 
-        return coordinates;
+    void UpdateTransformation() {
+        GetComponents<Transformation>(mTransformations);
+
+        if (mTransformations.Count > 0) {
+            mTransformation = mTransformations[0].Matrix;
+            for (int i = 1; i < mTransformations.Count; i++) {
+                mTransformation = mTransformations[i].Matrix * mTransformation;
+            }
+        }
     }
 }
