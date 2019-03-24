@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 546464984}
   - component: {fileID: 546464986}
   - component: {fileID: 546464987}
+  - component: {fileID: 546464988}
   m_Layer: 0
   m_Name: GridObject
   m_TagString: Untagged
@@ -324,3 +325,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mScale: {x: 1, y: 1, z: 1}
+--- !u!114 &546464988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 546464983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272c9306cc2c74c91a352e3f3681db2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mRotation: {x: 0, y: 0, z: 0}
